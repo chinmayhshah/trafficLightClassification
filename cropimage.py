@@ -39,16 +39,16 @@ def find_contours():
 
 
 
-def crop_image():
+def crop_image(imageName):
     output = find_contours()
     #*****#Replace the image that you want to draw on ******
-    img = cv2.imread("Speed120.png",0)
+    img = cv2.imread(imageName,0)
     QR_orig = cv2.imread('final.png', 0)
     QR = cv2.imread('final.png', 0)
     mask = np.zeros(QR.shape, np.uint8)
     contours, hierarchy = cv2.findContours(QR, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     QR_final = 0
-    print "The contours are" , contours[1]
+    #print "The contours are" , contours[1]
     for cnt in contours:
         if cv2.contourArea(cnt) > 100:
             cv2.drawContours(mask, [cnt], 0, 255,-1)
@@ -60,10 +60,17 @@ def crop_image():
     cv2.imwrite('final.png', QR_final)
     cv2.imshow('Demo', img)
     print_image("final", QR_final)
+    cv2.waitKey
 
 def crop_original_image():
     pass
 if __name__ == "__main__":
-    mask_image()
-    find_contours()
-    crop_image()
+    # construct the argument parse and parse the arguments
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-i", "--image", required=True,
+        help="path to the input image")
+    args = vars(ap.parse_args())
+    #mask_image()
+    #find_contours()
+    imageName=args["image"]
+    crop_image(imageName)
