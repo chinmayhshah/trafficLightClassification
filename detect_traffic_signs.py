@@ -88,13 +88,38 @@ def mark_rectangle(original_image, contours):
     #
     # cnt = contours[max_index]
     for cnt in contours:
-        if cv2.contourArea(cnt) > 250:
+
+        perimeter = cv2.arcLength(cnt, True)
+        # skip shape/contour if it is too small or too big
+        #if perimeter < 100 or perimeter > 1000 or cv2.isContourConvex(cnt):
+        if perimeter < 100 or cv2.isContourConvex(cnt):
+            #print "Continue"
+            continue
+
+
+        if cv2.contourArea(cnt) > 100:
+            approx = cv2.approxPolyDP(cnt, 0.001 * cv2.arcLength(cnt, True), True)
             x, y, w, h = cv2.boundingRect(cnt)
-            cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+            # colour different shapes
+            if len(approx) == 3:
+                cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            # elif len(approx) == 4:
+            #     cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            elif len(approx) >= 100:
+                cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 255), 2)
+            else:
+                # not an interesting shape for us
+                pass
+            #x, y, w, h = cv2.boundingRect(cnt)
+            #cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
     cv2.imshow("Show", original_image)
     cv2.imshow("rectangles",original_image)
     cv2.waitKey(0)
+
+
+
 
 
 
