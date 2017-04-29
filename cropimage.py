@@ -21,7 +21,7 @@ def mask_image(imageName):
     #image=imageName
     r =  [([17, 15, 90], [50, 56, 200])]
     b =  [([90, 31, 4], [220, 88, 50])]
-    for (lower, upper) in r:
+    for (lower, upper) in b:
         lower = np.array(lower, dtype = "uint8")
         upper = np.array(upper, dtype = "uint8")
         print lower, upper
