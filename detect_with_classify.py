@@ -4,6 +4,8 @@ import cv2
 import time
 import subprocess
 import sys
+import os
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -12,6 +14,7 @@ def parse_arguments():
     file_name = args.filename
     img = cv2.imread(file_name)
     return img
+
 
 def mask_red_color(plain_image):
     img_hsv = cv2.cvtColor(plain_image, cv2.COLOR_BGR2HSV)
@@ -34,13 +37,12 @@ def mask_red_color(plain_image):
     # set my output img to zero everywhere except my mask
     output_img = plain_image.copy()
     output_img[np.where(mask == 0)] = 0
-    #cv2.imwrite('masked.png', output_img)
+    # cv2.imwrite('masked.png', output_img)
     cv2.imshow('masked.png', output_img)
     # cv2.waitKey(0)
     output_img_blur = cv2.medianBlur(output_img, 5)  # 5 is a fairly small kernel size
     hsv_img = cv2.cvtColor(output_img_blur, cv2.COLOR_BGR2HSV)
     return hsv_img
-
 
 
 def mask_blue_color(plain_image):
@@ -62,17 +64,16 @@ def mask_blue_color(plain_image):
     lower_blue = np.array([200, 255, 255])
     mask1 = cv2.inRange(img_hsv, lower_blue, upper_blue)
     # join masks
-    mask = mask0  + mask1
+    mask = mask0 + mask1
     # set my output img to zero everywhere except my mask
     output_img = plain_image.copy()
     output_img[np.where(mask == 0)] = 0
-    #cv2.imwrite('masked.png', output_img)
+    # cv2.imwrite('masked.png', output_img)
     # cv2.imshow('masked.png', output_img)
     # cv2.waitKey(0)
     output_img_blur = cv2.medianBlur(output_img, 5)  # 5 is a fairly small kernel size
     hsv_img = cv2.cvtColor(output_img_blur, cv2.COLOR_BGR2HSV)
     return hsv_img
-
 
 
 def find_contours(input_plain_image):
@@ -83,6 +84,7 @@ def find_contours(input_plain_image):
     # cv2.imshow("gray_scale",gray_image)
     # cv2.waitKey(0)
     return contours
+
 
 def mark_rectangle(original_image, contours):
     imgno = 0
@@ -99,8 +101,8 @@ def mark_rectangle(original_image, contours):
             pass
         # skip shape/contour if it is too small or too big
         if perimeter < 100 or perimeter > 1000 or cv2.isContourConvex(cnt):
-        # if perimeter < 100 or cv2.isContourConvex(cnt):
-            #print "Continue"
+            # if perimeter < 100 or cv2.isContourConvex(cnt):
+            # print "Continue"
             continue
         if cv2.contourArea(cnt) > 100:
             approx = cv2.approxPolyDP(cnt, 0.001 * cv2.arcLength(cnt, True), True)
@@ -114,17 +116,21 @@ def mark_rectangle(original_image, contours):
 
             elif len(approx) == 4:
                 final_image = original_image[y:y + h, x:x + w]
+                print cX, cY
 
                 # cv2.imwrite("rec_image" +str(imgno)+".png", final_image)
-                # cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
-            elif len(approx) in range(100,105):
+            elif len(approx) in range(100, 105):
                 final_image = original_image[y:y + h, x:x + w]
                 print len(approx)
                 # cv2.imwrite("cir_image" +str(imgno)+".png", final_image)
-                if cX in range(1000,1400) and cY in range(100,200):
+                if cX in range(1000, 1400) and cY in range(100, 200):
+                    final_image = original_image[y:y + h, x:x + w]
                     cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 255), 2)
                     cv2.imshow("detected_image", final_image)
+                    cv2.imwrite("to_classify.png", final_image )
+                    connect_to_tx1("to_classify.png")
                 # cv2.putText(final_image, str(cX)+str(cY), (0, 0), cv2.FONT_HERSHEY_SIMPLEX,
                 #             0.5, (255, 255, 255), 2)
                 print cX, cY
@@ -137,10 +143,9 @@ def mark_rectangle(original_image, contours):
                 # cv2.rectangle(original_image, (x, y), (x + w, y + h), (255, 0, 0), 2)
                 final_image = original_image[y:y + h, x:x + w]
 
-
     cv2.imshow("Show", original_image)
-    cv2.imshow("rectangles",original_image)
-    cv2.imwrite("rect_image.png",original_image)
+    cv2.imshow("rectangles", original_image)
+    cv2.imwrite("rect_image.png", original_image)
     # cv2.waitKey(0)
 
 
@@ -155,20 +160,22 @@ def play_video_file(file_name):
         blue_mask_image = mask_blue_color(frame)
         contours_red = find_contours(red_mask_image)
         contours_blue = find_contours(blue_mask_image)
-        mark_rectangle(frame,contours_red)
+        mark_rectangle(frame, contours_red)
         # connect_to_tx1("30-cropped.png")
-        cv2.imshow('frame',frame)
+        cv2.imshow('frame', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     cap.release()
     cv2.destroyAllWindows()
 
+
 def connect_to_tx1(file_name):
     HOST = "ubuntu@10.42.0.69"
+    os.system("scp "+str(file_name)+" ubuntu@10.42.0.69:~/ACAPROJECT ")
     # Ports are handled in ~/.ssh/config since we use OpenSSH
     COMMAND = "python ~/caffe/python/use_archive.py ~/ACAPROJECT/20170423-190916-a8ef_epoch_10.0.tar.gz" \
-              " ~/ACAPROJECT/%s"%file_name
+              " ~/ACAPROJECT/%s" % file_name
     ssh = subprocess.Popen(["ssh", "%s" % HOST, COMMAND],
                            shell=False,
                            stdout=subprocess.PIPE,
@@ -181,8 +188,6 @@ def connect_to_tx1(file_name):
         print [i for i in result]
 
 
-
-
 if __name__ == "__main__":
     # input_image = parse_arguments()
     # red_mask_image = mask_red_color(input_image)
@@ -191,5 +196,4 @@ if __name__ == "__main__":
     # contours_blue = find_contours(blue_mask_image)
     # mark_rectangle(input_image,contours_red)
     # mark_rectangle(input_image,contours_blue)
-    play_video_file("cut_video.mp4")
-
+    play_video_file("snipped.mp4")
