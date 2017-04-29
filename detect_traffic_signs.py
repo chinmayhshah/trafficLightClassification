@@ -47,15 +47,15 @@ def mask_blue_color(plain_image):
     # lower mask (0-10)
     # lower_blue = np.array([70, 45, 191])
     # upper_blue = np.array([55, 33, 216])
-    lower_blue = np.array([80, 150, 150])
-    upper_blue = np.array([170, 255, 225])
+    lower_blue = np.array([100, 150, 0])
+    upper_blue = np.array([140, 255, 225])
     mask0 = cv2.inRange(img_hsv, lower_blue, upper_blue)
 
     # upper mask (170-180)
     # upper_blue = np.array([18, 18, 255])
     # lower_blue = np.array([43, 43, 231])
-    upper_blue = np.array([170, 255, 225])
-    lower_blue = np.array([80, 150, 150])
+    upper_blue = np.array([170, 150, 0])
+    lower_blue = np.array([200, 255, 255])
     mask1 = cv2.inRange(img_hsv, lower_blue, upper_blue)
     # join masks
     mask = mask0 + mask1
