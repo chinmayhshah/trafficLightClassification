@@ -1,11 +1,4 @@
-import numpy as np
-import argparse
-import cv2
-import time
-import subprocess
-import sys
-import os
-
+import argparse, cv2, numpy as np, os, sys, subprocess, thread, time
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -38,7 +31,7 @@ def mask_red_color(plain_image):
     output_img = plain_image.copy()
     output_img[np.where(mask == 0)] = 0
     # cv2.imwrite('masked.png', output_img)
-    cv2.imshow('masked.png', output_img)
+    # cv2.imshow('masked.png', output_img)
     # cv2.waitKey(0)
     output_img_blur = cv2.medianBlur(output_img, 5)  # 5 is a fairly small kernel size
     hsv_img = cv2.cvtColor(output_img_blur, cv2.COLOR_BGR2HSV)
@@ -56,7 +49,6 @@ def mask_blue_color(plain_image):
     # lower_blue = np.array([90, 31, 4])
     # upper_blue = np.array([220, 88, 50])
     mask0 = cv2.inRange(img_hsv, lower_blue, upper_blue)
-
     # upper mask (170-180)
     # upper_blue = np.array([18, 18, 255])
     # lower_blue = np.array([43, 43, 231])
@@ -117,8 +109,6 @@ def mark_rectangle(original_image, contours):
             elif len(approx) == 4:
                 final_image = original_image[y:y + h, x:x + w]
                 print cX, cY
-
-                # cv2.imwrite("rec_image" +str(imgno)+".png", final_image)
                 cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
             elif len(approx) in range(100, 105):
@@ -130,12 +120,9 @@ def mark_rectangle(original_image, contours):
                     cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 255), 2)
                     cv2.imshow("detected_image", final_image)
                     cv2.imwrite("to_classify.png", final_image )
-                    connect_to_tx1("to_classify.png")
-                # cv2.putText(final_image, str(cX)+str(cY), (0, 0), cv2.FONT_HERSHEY_SIMPLEX,
-                #             0.5, (255, 255, 255), 2)
+                    thread.start_new_thread(connect_to_tx1,("to_classify.png",1))
                 print cX, cY
                 cv2.resizeWindow('detected_image', 500, 500)
-
                 cv2.waitKey(5)
 
 
@@ -143,8 +130,8 @@ def mark_rectangle(original_image, contours):
                 # cv2.rectangle(original_image, (x, y), (x + w, y + h), (255, 0, 0), 2)
                 final_image = original_image[y:y + h, x:x + w]
 
-    cv2.imshow("Show", original_image)
-    cv2.imshow("rectangles", original_image)
+    # cv2.imshow("Show", original_image)
+    # cv2.imshow("rectangles", original_image)
     cv2.imwrite("rect_image.png", original_image)
     # cv2.waitKey(0)
 
@@ -170,7 +157,7 @@ def play_video_file(file_name):
     cv2.destroyAllWindows()
 
 
-def connect_to_tx1(file_name):
+def connect_to_tx1(file_name,delay):
     HOST = "ubuntu@10.42.0.69"
     os.system("scp "+str(file_name)+" ubuntu@10.42.0.69:~/ACAPROJECT ")
     # Ports are handled in ~/.ssh/config since we use OpenSSH
@@ -185,7 +172,8 @@ def connect_to_tx1(file_name):
         error = ssh.stderr.readlines()
         print >> sys.stderr, "ERROR: %s" % error
     else:
-        print [i for i in result]
+       print result[2:10]
+        # tkMessageBox.showinfo(title="Prediction", message=result[2:10])
 
 
 if __name__ == "__main__":
@@ -196,4 +184,4 @@ if __name__ == "__main__":
     # contours_blue = find_contours(blue_mask_image)
     # mark_rectangle(input_image,contours_red)
     # mark_rectangle(input_image,contours_blue)
-    play_video_file("snipped.mp4")
+    play_video_file("cut_video.mp4")
