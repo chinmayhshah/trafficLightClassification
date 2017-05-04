@@ -150,6 +150,7 @@ def play_video_file(file_name):
         mark_rectangle(frame, contours_red)
         # connect_to_tx1("30-cropped.png")
         cv2.imshow('frame', frame)
+        cv2.waitKey(50)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
