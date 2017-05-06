@@ -1,4 +1,6 @@
 import argparse, cv2, numpy as np, os, sys, subprocess, thread, time
+import tkMessageBox
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -141,6 +143,7 @@ def play_video_file(file_name):
     while (cap.isOpened()):
         ret, frame = cap.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        print "gray", gray
         # time.sleep(0.05)
         # input_image = parse_arguments()
         red_mask_image = mask_red_color(frame)
@@ -148,6 +151,8 @@ def play_video_file(file_name):
         contours_red = find_contours(red_mask_image)
         contours_blue = find_contours(blue_mask_image)
         mark_rectangle(frame, contours_red)
+        mark_rectangle(frame, contours_blue)
+
         # connect_to_tx1("30-cropped.png")
         cv2.imshow('frame', frame)
         cv2.waitKey(50)
@@ -174,7 +179,8 @@ def connect_to_tx1(file_name,delay):
         print >> sys.stderr, "ERROR: %s" % error
     else:
        print result[2:10]
-        # tkMessageBox.showinfo(title="Prediction", message=result[2:10])
+       # tkMessageBox.showinfo(title="Prediction", message=result[2:10])
+
 
 
 if __name__ == "__main__":
@@ -185,4 +191,4 @@ if __name__ == "__main__":
     # contours_blue = find_contours(blue_mask_image)
     # mark_rectangle(input_image,contours_red)
     # mark_rectangle(input_image,contours_blue)
-    play_video_file("cut_video.mp4")
+    play_video_file("cut_video1.mp4")
