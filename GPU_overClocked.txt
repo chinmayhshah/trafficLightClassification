@@ -1,0 +1,156 @@
+
+30 Classification
+# With  GPU Overclocked 
+
+EPoch 1
+0.1335, 52.3337%,30 speed, 31.8598%,50 speed,  6.7482%,70 speed,  2.1951%,80 speed,  1.1942%,100 speed,
+0.132, 53.1269%,30 speed, 30.5675%,50 speed,  8.3902%,70 speed,  2.3975%,no overtaking general,  2.2275%,80 speed,
+0.132, 57.1573%,30 speed, 30.7844%,50 speed,  5.0779%,70 speed,  2.2094%,80 speed,  1.1628%,120 speed,
+0.132, 59.2035%,30 speed, 30.2614%,50 speed,  5.1717%,70 speed,  1.6744%,80 speed,  0.7460%,no overtaking general,
+0.1315, 55.8509%,30 speed, 27.8291%,50 speed,  6.7588%,70 speed,  2.5455%,80 speed,  1.2913%,no overtaking general,
+0.1302, 66.8139%,30 speed, 24.8642%,50 speed,  3.5799%,70 speed,  2.1857%,80 speed,  0.8237%,100 speed,
+#
+ EPoch 6
+0.1312, 99.4433%,70 speed,  0.2986%,50 speed,  0.2364%,30 speed,  0.0157%,no way general,  0.0028%,20 speed,
+0.132, 99.8192%,30 speed,  0.1598%,20 speed,  0.0190%,50 speed,  0.0019%,120 speed,  0.0002%,80 speed,
+0.1296,100.0000%,30 speed,  0.0000%,20 speed,  0.0000%,50 speed,  0.0000%,80 speed,  0.0000%,60 speed,
+0.1303, 99.8236%,30 speed,  0.1625%,20 speed,  0.0125%,50 speed,  0.0010%,70 speed,  0.0003%,120 speed,
+0.1304, 72.8572%,30 speed, 13.4831%,20 speed, 11.4586%,70 speed,  2.1387%,50 speed,  0.0338%,attention construction,
+0.131, 99.9957%,30 speed,  0.0042%,20 speed,  0.0001%,50 speed,  0.0000%,120 speed,  0.0000%,attention construction,
+#
+ EPoch 13
+0.1315, 91.2461%,70 speed,  8.6109%,30 speed,  0.0851%,20 speed,  0.0570%,50 speed,  0.0008%,turn left down,
+0.1308,100.0000%,30 speed,  0.0000%,20 speed,  0.0000%,50 speed,  0.0000%,attention construction,  0.0000%,80 speed,
+0.1312,100.0000%,30 speed,  0.0000%,50 speed,  0.0000%,attention construction,  0.0000%,80 speed,  0.0000%,20 speed,
+0.1512,100.0000%,30 speed,  0.0000%,50 speed,  0.0000%,20 speed,  0.0000%,attention construction,  0.0000%,70 speed,
+0.1312, 99.9241%,30 speed,  0.0570%,20 speed,  0.0151%,70 speed,  0.0020%,attention construction,  0.0018%,50 speed,
+0.138,100.0000%,30 speed,  0.0000%,50 speed,  0.0000%,20 speed,  0.0000%,80 speed,  0.0000%,attention construction,
+
+50 Classification
+# With  GPU Overclocked 
+
+EPoch 1
+0.1378, 69.1436%,30 speed, 23.5962%,50 speed,  2.8267%,70 speed,  1.2495%,80 speed,  0.8204%,100 speed,
+0.1296, 57.0107%,30 speed, 28.3014%,50 speed,  5.9574%,70 speed,  2.6738%,80 speed,  1.5284%,no overtaking general,
+0.1304, 57.4125%,30 speed, 30.6666%,50 speed,  6.3618%,70 speed,  1.7532%,80 speed,  1.1767%,no overtaking general,
+0.1311, 75.5617%,30 speed, 18.4470%,50 speed,  2.1885%,70 speed,  1.0905%,80 speed,  0.7885%,100 speed,
+0.1328, 68.1999%,30 speed, 23.4177%,50 speed,  3.5152%,70 speed,  2.0239%,80 speed,  0.7008%,100 speed,
+0.1543, 48.7637%,30 speed, 28.2158%,50 speed,  7.8986%,70 speed,  4.2388%,80 speed,  2.1187%,no overtaking general,
+0.1314, 70.1679%,30 speed, 22.2564%,50 speed,  3.2877%,70 speed,  1.8656%,80 speed,  0.6466%,100 speed,
+0.1334, 65.6200%,30 speed, 25.8182%,50 speed,  3.3485%,70 speed,  1.3682%,80 speed,  0.9006%,100 speed,
+0.1298, 39.6336%,30 speed, 11.1929%,80 speed, 10.2297%,50 speed,  9.1348%,no overtaking general,  8.4168%,70 speed,
+#
+ EPoch 6
+0.1304,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,turn straight left,
+0.1342,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,turn straight left,
+0.1338,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,turn straight left,  0.0000%,30 speed,
+0.1376,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,20 speed,
+0.1305,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,turn straight left,
+0.1301, 99.9898%,50 speed,  0.0093%,80 speed,  0.0005%,120 speed,  0.0003%,30 speed,  0.0000%,60 speed,
+0.1315,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,20 speed,
+0.1498,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,120 speed,  0.0000%,30 speed,  0.0000%,turn straight left,
+0.1296, 99.9999%,50 speed,  0.0001%,80 speed,  0.0000%,60 speed,  0.0000%,120 speed,  0.0000%,no way trucks,
+#
+ EPoch 13
+0.13,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,turn straight left,  0.0000%,80 speed,  0.0000%,attention slippery,
+0.1307,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,turn straight left,  0.0000%,80 speed,  0.0000%,20 speed,
+0.1304,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,turn straight right,
+0.1312,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,attention children,
+0.1297,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,turn straight left,  0.0000%,80 speed,  0.0000%,attention slippery,
+0.129, 99.9999%,50 speed,  0.0001%,30 speed,  0.0000%,80 speed,  0.0000%,60 speed,  0.0000%,120 speed,
+0.1302,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,20 speed,
+0.1297,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,20 speed,
+0.1303,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,30 speed,  0.0000%,turn straight right,
+
+MEN_WORK Classification
+# With  GPU Overclocked 
+
+EPoch 1
+0.1307, 22.2813%,right of way crossing, 13.2362%,attention construction, 12.0664%,attention general, 11.9752%,attention slippery,  7.8779%,attention children,
+0.131, 14.2016%,right of way crossing, 11.1446%,attention construction, 10.3805%,attention slippery,  8.5723%,30 speed,  8.3453%,attention children,
+0.1299, 18.5497%,right of way crossing, 16.0743%,attention general, 13.9950%,attention construction, 11.7312%,attention slippery, 11.4003%,attention children,
+0.1307, 17.9846%,right of way crossing, 17.2939%,attention general, 15.3675%,attention construction, 11.0837%,attention slippery, 10.4103%,attention children,
+0.13, 18.8191%,attention general, 15.8205%,right of way crossing, 12.5274%,attention children, 12.3838%,attention construction, 11.1620%,attention slippery,
+0.1296, 17.3348%,right of way crossing, 16.7895%,attention general, 13.5440%,attention construction, 11.9364%,attention slippery, 11.4046%,attention children,
+0.1296, 28.9267%,30 speed, 17.7734%,50 speed,  6.4418%,70 speed,  4.9022%,80 speed,  4.2253%,no way general,
+0.1303, 16.8538%,attention general, 14.0958%,attention construction, 12.7471%,right of way crossing, 11.4890%,attention children,  9.3697%,attention slippery,
+0.1306, 22.1470%,attention general, 12.6207%,right of way crossing, 12.0963%,attention children, 12.0160%,attention construction,  9.4882%,attention slippery,
+0.1509, 14.8779%,30 speed,  9.0988%,attention construction,  8.3985%,50 speed,  7.8726%,attention general,  7.4967%,attention children,
+0.1292, 12.5916%,attention construction, 10.4548%,attention general,  9.3480%,right of way crossing,  8.8274%,attention children,  8.0169%,attention slippery,
+0.1292, 19.4172%,right of way crossing, 15.6990%,attention general, 13.9841%,attention construction, 11.9226%,attention slippery, 10.2663%,attention children,
+0.1293, 19.3313%,right of way crossing, 16.0205%,attention general, 13.7316%,attention slippery, 12.9198%,attention construction, 11.3946%,attention children,
+0.1304, 18.5362%,attention general, 18.0918%,right of way crossing, 13.6382%,attention construction,  9.3120%,attention slippery,  7.0299%,attention children,
+#
+ EPoch 6
+0.1345, 99.9955%,attention construction,  0.0045%,20 speed,  0.0000%,attention bottleneck,  0.0000%,30 speed,  0.0000%,attention slippery,
+0.1303, 99.9998%,attention construction,  0.0002%,20 speed,  0.0000%,30 speed,  0.0000%,attention general,  0.0000%,attention slippery,
+0.1299, 99.9999%,attention construction,  0.0001%,20 speed,  0.0000%,attention bottleneck,  0.0000%,attention general,  0.0000%,30 speed,
+0.1304, 99.9996%,attention construction,  0.0002%,attention general,  0.0001%,attention bottleneck,  0.0001%,20 speed,  0.0000%,turn left down,
+0.1294, 99.6029%,attention construction,  0.2069%,attention general,  0.1894%,attention bottleneck,  0.0003%,20 speed,  0.0003%,attention deer,
+0.1285, 99.4903%,attention construction,  0.2563%,attention bottleneck,  0.2525%,attention general,  0.0004%,20 speed,  0.0003%,attention pedestrian,
+0.1287, 99.9991%,attention construction,  0.0006%,20 speed,  0.0001%,30 speed,  0.0001%,50 speed,  0.0001%,attention slippery,
+0.1303, 99.7755%,attention children,  0.1153%,attention bottleneck,  0.0947%,attention construction,  0.0080%,attention snowflake,  0.0046%,attention bikes,
+0.1307, 98.7229%,attention construction,  0.7591%,attention bottleneck,  0.5159%,attention general,  0.0018%,20 speed,  0.0003%,attention deer,
+0.1303, 99.9990%,attention construction,  0.0004%,20 speed,  0.0004%,attention slippery,  0.0001%,30 speed,  0.0000%,turn left down,
+0.1294, 99.9999%,attention construction,  0.0001%,20 speed,  0.0000%,attention bottleneck,  0.0000%,30 speed,  0.0000%,attention general,
+0.13, 99.9999%,attention construction,  0.0001%,20 speed,  0.0000%,30 speed,  0.0000%,attention bottleneck,  0.0000%,attention general,
+0.1296, 99.9978%,attention construction,  0.0014%,20 speed,  0.0008%,attention bottleneck,  0.0000%,attention general,  0.0000%,attention slippery,
+0.1314, 99.3433%,attention children,  0.5343%,attention snowflake,  0.0452%,attention bottleneck,  0.0423%,attention bikes,  0.0325%,attention construction,
+#
+ EPoch 13
+0.1294,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,attention slippery,  0.0000%,turn left down,
+0.1307,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,turn left down,  0.0000%,attention slippery,
+0.1704,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,turn left down,  0.0000%,attention bikes,
+0.129,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,attention slippery,  0.0000%,turn left down,
+0.1322,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention deer,  0.0000%,attention curvy,  0.0000%,attention bottleneck,
+0.132,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention bikes,  0.0000%,attention curvy,  0.0000%,attention bottleneck,
+0.1316,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention slippery,  0.0000%,turn left down,  0.0000%,attention bikes,
+0.1294, 99.9998%,attention children,  0.0001%,attention construction,  0.0001%,attention bikes,  0.0000%,attention curvy,  0.0000%,attention snowflake,
+0.1296,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,attention bottleneck,  0.0000%,attention deer,
+0.1292,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention slippery,  0.0000%,turn left down,  0.0000%,20 speed,
+0.1326,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,turn left down,  0.0000%,attention children,
+0.1321,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,20 speed,  0.0000%,attention slippery,  0.0000%,turn left down,
+0.1297,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention slippery,  0.0000%,20 speed,  0.0000%,turn left down,
+0.1298, 99.8856%,attention children,  0.0721%,attention bikes,  0.0244%,attention snowflake,  0.0172%,attention construction,  0.0005%,attention bottleneck,
+
+ROUND_ABOUT Classification
+# With  GPU Overclocked 
+
+EPoch 1
+0.1289, 54.9767%,turn right down, 13.9271%,turn straight, 11.1892%,turn right,  4.7108%,turn circle,  4.4740%,turn left down,
+0.1285, 54.9158%,turn right down, 14.5865%,turn straight, 10.5630%,turn right,  4.8988%,turn circle,  4.2951%,turn left down,
+0.1295, 55.4869%,turn right down, 14.5073%,turn straight, 10.5146%,turn right,  4.8167%,turn circle,  4.2005%,turn left down,
+0.1318, 52.5701%,turn right down, 15.8917%,turn straight, 10.9917%,turn right,  4.6130%,turn circle,  4.5353%,turn left down,
+0.1327, 60.0157%,turn right down, 12.1653%,turn straight,  9.7781%,turn right,  4.9574%,turn circle,  3.7001%,turn left down,
+0.1523, 62.6253%,turn right down, 11.3092%,turn straight,  9.7256%,turn right,  4.2326%,turn circle,  3.2358%,turn left down,
+0.131, 56.7836%,turn right down, 13.3951%,turn straight, 10.7502%,turn right,  4.7615%,turn circle,  4.1450%,turn left down,
+0.1304, 55.2104%,turn right down, 14.3958%,turn straight, 10.7187%,turn right,  4.8534%,turn circle,  4.2736%,turn left down,
+0.1306, 63.8562%,turn right down, 11.6017%,turn straight,  8.2305%,turn right,  3.8459%,turn circle,  3.2093%,turn left down,
+0.1294, 52.6231%,turn right down, 16.0263%,turn straight, 10.9020%,turn right,  4.5852%,turn left down,  4.5494%,turn circle,
+0.1306, 54.1669%,turn right down, 14.6151%,turn straight, 11.1883%,turn right,  4.6151%,turn left down,  4.0462%,turn circle,
+#
+ EPoch 6
+0.1295, 96.2730%,turn circle,  3.3302%,turn straight left,  0.2626%,turn right down,  0.0795%,turn right,  0.0259%,turn straight right,
+0.1296, 74.9709%,turn circle, 20.2235%,turn right down,  2.9880%,turn straight left,  1.6621%,turn left down,  0.0471%,50 speed,
+0.1302, 64.5480%,turn circle, 33.2811%,turn right down,  1.4310%,turn left down,  0.6926%,turn straight left,  0.0199%,turn right,
+0.1296, 70.7871%,turn circle, 25.9973%,turn right down,  1.7306%,turn straight left,  1.3513%,turn left down,  0.0495%,turn right,
+0.1292, 80.4162%,turn circle, 17.6001%,turn right down,  1.1809%,turn left down,  0.7363%,turn straight left,  0.0232%,turn right,
+0.1297, 94.3007%,turn circle,  5.0400%,turn right down,  0.3139%,turn left down,  0.2971%,turn straight left,  0.0245%,turn right,
+0.1293, 98.6293%,turn circle,  1.0997%,turn straight left,  0.2307%,turn right down,  0.0243%,turn right,  0.0060%,turn straight right,
+0.1288, 56.2857%,turn circle, 37.1449%,turn right down,  6.0219%,turn left down,  0.4497%,turn straight left,  0.0503%,attention construction,
+0.13, 68.7244%,turn straight right, 26.5982%,turn straight left,  1.6466%,turn left,  1.5928%,turn right down,  0.7590%,turn right,
+0.1297, 48.7250%,turn circle, 47.1525%,turn right down,  2.8631%,turn left down,  1.1581%,turn straight left,  0.0269%,turn right,
+0.1396, 97.5522%,turn circle,  2.2887%,turn straight left,  0.0973%,turn right down,  0.0354%,turn right,  0.0122%,turn straight right,
+#
+ EPoch 13
+0.1297, 99.9938%,turn circle,  0.0056%,turn straight left,  0.0004%,turn right down,  0.0001%,turn right,  0.0000%,right of way general,
+0.1292, 99.9859%,turn circle,  0.0108%,turn straight left,  0.0024%,turn right down,  0.0007%,turn left down,  0.0001%,turn right,
+0.1298, 99.9923%,turn circle,  0.0037%,turn right down,  0.0029%,turn straight left,  0.0009%,turn left down,  0.0000%,turn left,
+0.1299, 99.9915%,turn circle,  0.0045%,turn straight left,  0.0035%,turn right down,  0.0003%,turn left down,  0.0001%,turn right,
+0.1293, 99.9972%,turn circle,  0.0013%,turn straight left,  0.0013%,turn right down,  0.0001%,turn left down,  0.0001%,turn right,
+0.13, 99.9975%,turn circle,  0.0014%,turn right down,  0.0006%,turn straight left,  0.0002%,turn left,  0.0001%,turn right,
+0.1296, 99.9955%,turn circle,  0.0036%,turn straight left,  0.0008%,turn right down,  0.0001%,turn right,  0.0000%,turn left,
+0.1314, 99.9921%,turn circle,  0.0031%,turn straight left,  0.0029%,turn right down,  0.0017%,turn left down,  0.0000%,attention construction,
+0.1337, 76.3209%,turn straight right, 22.8290%,turn straight left,  0.2967%,turn right,  0.1701%,50 speed,  0.1637%,turn circle,
+0.1323, 99.9809%,turn circle,  0.0116%,turn straight left,  0.0046%,turn right down,  0.0028%,turn left down,  0.0000%,50 speed,
+0.1314, 99.9985%,turn circle,  0.0014%,turn straight left,  0.0001%,turn right down,  0.0000%,turn right,  0.0000%,turn left,
