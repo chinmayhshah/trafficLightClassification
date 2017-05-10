@@ -1,13 +1,5 @@
-
 30 Classification
-# Without  GPUEPoch 10.2451, 52.3337%,30 speed, 31.8598%,50 speed,  6.7482%,70 speed,  2.1951%,80 speed,  1.1942%,100 speed,
-0.311, 53.1269%,30 speed, 30.5675%,50 speed,  8.3902%,70 speed,  2.3975%,no overtaking general,  2.2275%,80 speed,
-0.2598, 57.1573%,30 speed, 30.7844%,50 speed,  5.0779%,70 speed,  2.2094%,80 speed,  1.1628%,120 speed,
-0.2561, 59.2035%,30 speed, 30.2614%,50 speed,  5.1717%,70 speed,  1.6744%,80 speed,  0.7460%,no overtaking general,
-0.1881, 55.8509%,30 speed, 27.8291%,50 speed,  6.7588%,70 speed,  2.5455%,80 speed,  1.2913%,no overtaking general,
-
-30 Classification
-# Without  GPU
+#With GPU
 
 EPoch 1
 0.2478, 52.3337%,30 speed, 31.8598%,50 speed,  6.7482%,70 speed,  2.1951%,80 speed,  1.1942%,100 speed,
@@ -33,7 +25,7 @@ EPoch 1
 0.2546, 99.9241%,30 speed,  0.0570%,20 speed,  0.0151%,70 speed,  0.0020%,attention construction,  0.0018%,50 speed,
 0.2161,100.0000%,30 speed,  0.0000%,50 speed,  0.0000%,20 speed,  0.0000%,80 speed,  0.0000%,attention construction,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 2.0008, 52.3338%,30 speed, 31.8597%,50 speed,  6.7482%,70 speed,  2.1951%,80 speed,  1.1942%,100 speed,
@@ -60,7 +52,7 @@ EPoch 1
 1.8716,100.0000%,30 speed,  0.0000%,50 speed,  0.0000%,20 speed,  0.0000%,80 speed,  0.0000%,attention construction,
 
 50 Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.28, 69.1436%,30 speed, 23.5962%,50 speed,  2.8267%,70 speed,  1.2495%,80 speed,  0.8204%,100 speed,
@@ -95,7 +87,7 @@ EPoch 1
 0.3031,100.0000%,50 speed,  0.0000%,30 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,20 speed,
 0.2056,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,30 speed,  0.0000%,turn straight right,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 1.9676, 69.1435%,30 speed, 23.5962%,50 speed,  2.8267%,70 speed,  1.2495%,80 speed,  0.8204%,100 speed,
@@ -131,7 +123,7 @@ EPoch 1
 1.8952,100.0000%,50 speed,  0.0000%,80 speed,  0.0000%,turn straight left,  0.0000%,30 speed,  0.0000%,turn straight right,
 
 MEN_WORK Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.2524, 22.2813%,right of way crossing, 13.2362%,attention construction, 12.0664%,attention general, 11.9752%,attention slippery,  7.8779%,attention children,
@@ -181,7 +173,7 @@ EPoch 1
 0.2034,100.0000%,attention construction,  0.0000%,30 speed,  0.0000%,attention slippery,  0.0000%,20 speed,  0.0000%,turn left down,
 0.2037, 99.8856%,attention children,  0.0721%,attention bikes,  0.0244%,attention snowflake,  0.0172%,attention construction,  0.0005%,attention bottleneck,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 1.9675, 22.2813%,right of way crossing, 13.2362%,attention construction, 12.0664%,attention general, 11.9752%,attention slippery,  7.8779%,attention children,
@@ -232,7 +224,7 @@ EPoch 1
 1.8799, 99.8855%,attention children,  0.0721%,attention bikes,  0.0244%,attention snowflake,  0.0172%,attention construction,  0.0005%,attention bottleneck,
 
 PEDES Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.2137, 19.8441%,right of way crossing, 12.9011%,attention construction, 12.6043%,attention general, 12.2156%,attention slippery,  9.2236%,attention children,
@@ -276,7 +268,7 @@ EPoch 1
 0.2078, 99.9998%,attention children,  0.0002%,attention bikes,  0.0001%,attention snowflake,  0.0000%,attention construction,  0.0000%,attention bottleneck,
 0.2596, 99.9829%,attention children,  0.0136%,attention bikes,  0.0032%,attention snowflake,  0.0003%,attention construction,  0.0000%,attention slippery,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 1.9564, 19.8441%,right of way crossing, 12.9011%,attention construction, 12.6042%,attention general, 12.2156%,attention slippery,  9.2236%,attention children,
@@ -321,7 +313,7 @@ EPoch 1
 1.8731, 99.9829%,attention children,  0.0136%,attention bikes,  0.0032%,attention snowflake,  0.0003%,attention construction,  0.0000%,attention slippery,
 
 SPLIT_RIGHT Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.2083, 58.8711%,turn right down, 11.5317%,turn straight, 10.3823%,turn right,  4.3176%,turn left down,  3.6345%,turn straight left,
@@ -383,7 +375,7 @@ EPoch 1
 0.2582, 78.3808%,turn straight right, 20.8798%,turn straight left,  0.2584%,turn right,  0.1703%,50 speed,  0.1318%,turn circle,
 0.1865, 83.5928%,turn straight right, 16.3493%,turn straight left,  0.0542%,turn right,  0.0022%,turn left,  0.0013%,50 speed,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 2.0716, 58.8711%,turn right down, 11.5317%,turn straight, 10.3822%,turn right,  4.3176%,turn left down,  3.6345%,turn straight left,
@@ -446,7 +438,7 @@ EPoch 1
 1.8853, 83.5927%,turn straight right, 16.3493%,turn straight left,  0.0542%,turn right,  0.0022%,turn left,  0.0013%,50 speed,
 
 STOP Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.2063, 82.6490%,stop, 16.6911%,no way one way,  0.4275%,30 speed,  0.1030%,no overtaking trucks,  0.0378%,attention construction,
@@ -511,7 +503,7 @@ EPoch 1
 0.2083, 99.9969%,stop,  0.0027%,attention bikes,  0.0001%,attention construction,  0.0001%,right of way crossing,  0.0001%,turn circle,
 0.2844, 99.9996%,stop,  0.0003%,attention bikes,  0.0000%,30 speed,  0.0000%,right of way crossing,  0.0000%,attention construction,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 1.9325, 82.6490%,stop, 16.6911%,no way one way,  0.4275%,30 speed,  0.1030%,no overtaking trucks,  0.0378%,attention construction,
@@ -577,7 +569,7 @@ EPoch 1
 1.867, 99.9996%,stop,  0.0003%,attention bikes,  0.0000%,30 speed,  0.0000%,right of way crossing,  0.0000%,attention construction,
 
 TURN_RIGHT Classification
-# Without  GPU
+# With  GPU
 
 EPoch 1
 0.1876, 54.9767%,turn right down, 13.9271%,turn straight, 11.1892%,turn right,  4.7108%,turn circle,  4.4740%,turn left down,
@@ -702,7 +694,7 @@ EPoch 1
 0.2284, 99.9809%,turn circle,  0.0116%,turn straight left,  0.0046%,turn right down,  0.0028%,turn left down,  0.0000%,50 speed,
 0.2083, 99.9985%,turn circle,  0.0014%,turn straight left,  0.0001%,turn right down,  0.0000%,turn right,  0.0000%,turn left,
 #
- With GPU
+ Without GPU
 #
  EPoch 1
 2.0282, 54.9766%,turn right down, 13.9271%,turn straight, 11.1892%,turn right,  4.7108%,turn circle,  4.4740%,turn left down,
