@@ -1,4 +1,8 @@
+import Tkinter
 import argparse, cv2, numpy as np, os, sys, subprocess, thread, time
+import threading
+import tkMessageBox
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -11,41 +15,38 @@ def parse_arguments():
 
 def mask_red_color(plain_image):
     img_hsv = cv2.cvtColor(plain_image, cv2.COLOR_BGR2HSV)
-
-    # lower mask for red
     lower_red = np.array([0, 70, 50])
     upper_red = np.array([10, 255, 255])
     mask0 = cv2.inRange(img_hsv, lower_red, upper_red)
-
-    # upper mask for red
     lower_red = np.array([170, 70, 50])
     upper_red = np.array([180, 255, 255])
     mask1 = cv2.inRange(img_hsv, lower_red, upper_red)
-    # Merge the masks
     mask = mask0 + mask1
     output_img = plain_image.copy()
     output_img[np.where(mask == 0)] = 0
-    output_img_blur = cv2.medianBlur(output_img, 5)
+    # cv2.imwrite('masked.png', output_img)
+    # cv2.imshow('masked.png', output_img)
+    # cv2.waitKey(0)
+    output_img_blur = cv2.medianBlur(output_img, 5)  # 5 is a fairly small kernel size
     hsv_img = cv2.cvtColor(output_img_blur, cv2.COLOR_BGR2HSV)
     return hsv_img
 
 
 def mask_blue_color(plain_image):
     img_hsv = cv2.cvtColor(plain_image, cv2.COLOR_BGR2HSV)
-
-    # lower mask for blue
     lower_blue = np.array([100, 150, 0])
     upper_blue = np.array([140, 255, 225])
     mask0 = cv2.inRange(img_hsv, lower_blue, upper_blue)
-    # upper mask for blue
     upper_blue = np.array([170, 150, 0])
     lower_blue = np.array([200, 255, 255])
     mask1 = cv2.inRange(img_hsv, lower_blue, upper_blue)
-    #Merge the masks
     mask = mask0 + mask1
     output_img = plain_image.copy()
     output_img[np.where(mask == 0)] = 0
-    output_img_blur = cv2.medianBlur(output_img, 5)
+    # cv2.imwrite('masked.png', output_img)
+    # cv2.imshow('masked.png', output_img)
+    # cv2.waitKey(0)
+    output_img_blur = cv2.medianBlur(output_img, 5)  # 5 is a fairly small kernel size
     hsv_img = cv2.cvtColor(output_img_blur, cv2.COLOR_BGR2HSV)
     return hsv_img
 
@@ -54,6 +55,9 @@ def find_contours(input_plain_image):
     gray_image = cv2.cvtColor(input_plain_image, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(gray_image, 127, 255, 0)
     contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    # cv2.imwrite('final.png', gray_image)
+    # cv2.imshow("gray_scale",gray_image)
+    # cv2.waitKey(0)
     return contours
 
 
@@ -70,7 +74,6 @@ def mark_rectangle(original_image, contours):
             cY = int((M["m01"] / M["m00"]))
         except:
             pass
-        # skip shape/contour if it is too small or too big
         if perimeter < 100 or perimeter > 1000 or cv2.isContourConvex(cnt):
             continue
         if cv2.contourArea(cnt) > 100:
@@ -93,7 +96,10 @@ def mark_rectangle(original_image, contours):
                     cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 255, 255), 2)
                     cv2.imshow("detected_image", final_image)
                     cv2.imwrite("to_classify.png", final_image )
-                    thread.start_new_thread(connect_to_tx1,("to_classify.png",1))
+                    # thread.start_new_thread(connect_to_tx1,("to_classify.png",1))
+                    t = threading.Thread(target=connect_to_tx1, args=("to_classify.png",1))
+                    t.start()
+
                 print cX, cY
                 cv2.resizeWindow('detected_image', 500, 500)
                 cv2.waitKey(5)
@@ -127,6 +133,7 @@ def play_video_file(file_name):
 def connect_to_tx1(file_name,delay):
     HOST = "ubuntu@10.42.0.69"
     os.system("scp "+str(file_name)+" ubuntu@10.42.0.69:~/ACAPROJECT ")
+    # Ports are handled in ~/.ssh/config since we use OpenSSH
     COMMAND = "python ~/caffe/python/use_archive.py ~/ACAPROJECT/20170423-190916-a8ef_epoch_10.0.tar.gz" \
               " ~/ACAPROJECT/%s" % file_name
     ssh = subprocess.Popen(["ssh", "%s" % HOST, COMMAND],
@@ -140,6 +147,17 @@ def connect_to_tx1(file_name,delay):
     else:
        print result[2:10]
 
+       root = Tkinter.Tk()
+       root.withdraw()
+       message_display = result[2] + result[3] + result[4] + result[5]
+       tkMessageBox.showinfo(title="Prediction", message= message_display)
+       root.destroy()
+
 
 if __name__ == "__main__":
-    play_video_file("cut_video.mp4")
+    input_image = parse_arguments()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename")
+    args = parser.parse_args()
+    file_name = args.filename
+    play_video_file(file_name)
