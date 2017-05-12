@@ -133,7 +133,6 @@ def play_video_file(file_name):
 def connect_to_tx1(file_name,delay):
     HOST = "ubuntu@10.42.0.69"
     os.system("scp "+str(file_name)+" ubuntu@10.42.0.69:~/ACAPROJECT ")
-    # Ports are handled in ~/.ssh/config since we use OpenSSH
     COMMAND = "python ~/caffe/python/use_archive.py ~/ACAPROJECT/20170423-190916-a8ef_epoch_10.0.tar.gz" \
               " ~/ACAPROJECT/%s" % file_name
     ssh = subprocess.Popen(["ssh", "%s" % HOST, COMMAND],
